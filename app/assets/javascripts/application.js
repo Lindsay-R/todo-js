@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 //    console.log(todo);
 
-    $('#todo-form').append("<div id='pop'>"+ todo + "<button id='complete'>"+ 'complete' +'</button>' + "<button id='remove'>"+ 'delete' +'</button>' +'</div>');
+    $('#todo-form').append("<div class='pop'>"+ todo + "<button class='complete'>"+ 'complete' +'</button>' + "<button class='remove'>"+ 'delete' +'</button>' +'</div>');
 
     if ( $( "input:first" ).val() != "" ) {
       $( '#alert' ).append('<div class="created-alert">'+ 'Todo Created' + '</div>').show().fadeOut( 3000 );
@@ -34,14 +34,6 @@ $(document).ready(function() {
 
   });
 
-
-
-
-  $(document).on("click", "#pop", function() {
-    $(this).empty().hide();
-  });
-
-
   $("#hide").click(function(){
     $("#alert").hide();
   });
@@ -49,7 +41,27 @@ $(document).ready(function() {
 
 
 
-//  + "<button id='hide'>"+ 'delete' +'</button>'
+  $(document).on("click", ".pop .remove", function() {
+    $( '.alert-delete' ).append('<div class="created-alert">'+ 'Todo Deleted' + '</div>').show().fadeOut( 3000 );
+    $(this).closest('.pop').empty().hide();
+
+  });
+
+  $("#hide-delete").click(function(){
+    $(".alert-delete").hide();
+  });
+
+
+  $(document).on("click", ".pop .complete", function() {
+    $( '.alert-complete' ).append('<div class="created-alert">'+ 'Todo Completed' + '</div>').show().fadeOut( 3000 );
+    $(this).closest('.pop').appendTo('#completed-todos');
+
+  });
+
+  $(".hide-complete").click(function(){
+    $(".alert-complete").hide();
+  });
+
 
 });
 

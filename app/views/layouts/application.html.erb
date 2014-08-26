@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>TodoJs</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
@@ -14,25 +14,38 @@
 <h1>Todo.ly</h1>
 
 <form action="javascript:alert( 'success!' );">
-  <div class='style-form'  >
+  <div class='style-form'>
     <input type='text' id='todo'>
     <br>
-    <input type='submit' value='Create Todo' >
+    <input type='submit' value='Create Todo'>
   </div>
 </form>
 
 <div class="todo-list">
   <h2>Things To-Do</h2>
 
-<div id='todo-form'> </div>
-<div class="alert-style" id="alert" > <button id='hide'>close</button></div>
+  <div id='todo-form'></div>
+  <div class="alert-style" id="alert">
+    <button id='hide'>close</button>
+  </div>
+  <div class="alert-delete">
+    <button id='hide-delete'>close</button>
+  </div>
+  <div class="alert-complete">
+    <button class='hide-complete'>close</button>
+  </div>
 
-  <!--<button id='remove'>delete</button>-->
 
 </div>
 
-<%= yield %>
+<div class="todo-list">
+  <h2>Completed</h2>
+  <div id='completed-todos'></div>
 
+</div>
+
+
+<%= yield %>
 
 
 </body>

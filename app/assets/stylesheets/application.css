@@ -46,4 +46,22 @@ body {
     margin-top: 30px;
 }
 
+.alert-delete {
+    background-color: darkred;
+    color: white;
+    display: none;
+    text-align: right;
+    height: 25px;
+    margin-top: 15px;
 
+}
+
+.alert-complete {
+    background-color: blue;
+    color: white;
+    display: none;
+    text-align: right;
+    height: 25px;
+    margin-top: 15px;
+
+}
