@@ -15,5 +15,45 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('body').append("<h1>hello world, I'm from only javascript!</h1>");
+  $('body').append("");
+
+
+
+  $('form').on('submit', function(e) {
+    e.preventDefault();
+    var todo =$('#todo').val();
+
+//    console.log(todo);
+
+    $('#todo-form').append("<div id='pop'>"+ todo + "<button id='complete'>"+ 'complete' +'</button>' + "<button id='remove'>"+ 'delete' +'</button>' +'</div>');
+
+    if ( $( "input:first" ).val() != "" ) {
+      $( '#alert' ).append('<div class="created-alert">'+ 'Todo Created' + '</div>').show().fadeOut( 3000 );
+      return;
+    }
+
+  });
+
+
+
+
+  $(document).on("click", "#pop", function() {
+    $(this).empty().hide();
+  });
+
+
+  $("#hide").click(function(){
+    $("#alert").hide();
+  });
+
+
+
+
+//  + "<button id='hide'>"+ 'delete' +'</button>'
+
 });
+
+
+
+
+
